@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Center</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <!-- Header con barra de navegacion -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto" href="#">Learning Center</a>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Learning Center</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2" href="./content/mision_vision.html">Mision & Vision</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2" href="./content/admisiones.html">Admisiones</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#" class="login-button">Iniciar Sesion</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- Carousel con imagenes informativas -->
+    <div class="container-fluid px-0">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/carousel1.jpg" class="d-block w-100" alt="carousel1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/carousel2.jpg" class="d-block w-100" alt=".carousel2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/carousel3.jpg" class="d-block w-100" alt="carousel3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Introcuccion a la pagina -->
+     <section class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>¿Porqué escogernos?</h1>
+            </div>
+            <div class="col-sm-12">
+                <h2>Profesionalismo. Calidad. Pasion. Futuro. Integridad</h2>
+                <p>Estas caracteristicas nos hacen una institucion que realmente se procupa por la enseñanza de el futuro de este pais,
+                    tenemos en cuenta que cada estudiante tiene habitos y personalidad diferente de los demas y respetar limites y
+                    ampliar el conocimiento son clave para un desarrollo apropiado</p>
+            </div>
+        </div>
+     </section>
+    <!-- Cards informativas -->
+    <section class="cards">
+        <div class="container my-3">
+            <div class="row gy-3">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./images/card1.jpg" class="card-img-top" alt="eleccion">
+                        <div class="card-body">
+                            <h5 class="card-title">Porque elegir LC</h5>
+                            <p class="card-text">Elegir LC significa unirte a una comunidad que valora la excelencia, la innovación y el crecimiento
+                                personal. Con programas de primer nivel y personal dedicado, aseguramos que cada estudiante alcance su máximo
+                                potencial.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./images/card2.jpg" class="card-img-top" alt="eventos">
+                        <div class="card-body">
+                            <h5 class="card-title">Eventos</h5>
+                            <p class="card-text">En LC, nuestros eventos especiales incluyen emocionantes clases extracurriculares y actividades
+                                divertidas que enriquecen la experiencia de los estudiantes fuera del aula. Ofrecemos oportunidades únicas para el
+                                crecimiento, la creatividad y la construcción de comunidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./images/card3.jpg" class="card-img-top" alt="transporte">
+                        <div class="card-body">
+                            <h5 class="card-title">Transporte</h5>
+                            <p class="card-text">transporte seguro y confiable hacia y desde la escuela, asegurando que cada estudiante llegue listo
+                                para aprender y regrese a casa sin inconvenientes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Seccion de informacion adicional -->
+    <section class="container">
+        <div class="row">
+            <img class="col-sm-8 icono" src="./images/logo1.png" alt="">
+            <img class="col-sm-4" src="./images/logo2.png" alt="">
+        </div>
+    </section>
+    <!-- Footer section -->
+    <footer class="footer text-white pt-5 pb-4">
+        <div class="container-fluid">
+            <div class="row text-center text-sm-left">
+                <div class="col">
+                    <h5 class="sm-4 font-weight-bold text-warning">Learning Center</h5>
+                    <p> En LC, brindamos un entorno de apoyo que fomenta el aprendizaje, el crecimiento y la excelencia
+                        académica, formando a los líderes del mañana.</p>
+                </div>
+                <div class="col">
+                    <h5 class="sm-4 font-weight-bold text-warning"></h5>
+                </div>
+                <div class="col">
+                    <h5 class="sm-4 font-weight-bold text-warning">Links</h5>
+                    <p><a class="text-white bi bi-whatsapp" style="text-decoration: none;" href="#"> WhatsApp</a></p>
+                    <p><a class="text-white bi bi-facebook" style="text-decoration: none;" href="#"> Facebook</a></p>
+                    <p><a class="text-white bi bi-instagram" style="text-decoration: none;" href="#"> Instagram</a></p>
+                </div>
+                <div class="col">
+                    <h5 class="sm-4 font-weight-bold text-warning">Contacto</h5>
+                    <p><i class="bi bi-envelope"></i> learning.center@lc.com</p>
+                    <p> +57 314 259 3024</p>
+                    <p><i class="bi bi-map"></i> Calle 221 #52 - 02</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootsrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>

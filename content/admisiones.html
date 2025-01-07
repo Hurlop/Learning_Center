@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mision & Vision</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <!-- Header con barra de navegacion -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto" href="#">Learning Center</a>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Learning Center</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2" aria-current="page" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2" href="./mision_vision.html">Mision & Vision</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#" class="login-button">Iniciar Sesion</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- Imagen relacionada con el contenido -->
+     <section class="imagen_admisiones">
+        <img src="../images/admisiones.jpg" class="admisionesimg" alt="admisiones_1">
+     </section>
+    <!-- Titulo admisiones -->
+    <div class="container">
+        <h1 class="text-center display-6">Proceso de Admisiones</h1>
+    </div>
+    <!-- Formulario -->
+    <div class="container">
+        <form class="row">
+            <h2>Dejanos tus datos</h2>
+            <div class="col-md-3">
+                <label for="inputEmail4" class="form-label">Nombre</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-3">
+                <label for="inputPassword4" class="form-label">Apellido</label>
+                <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-6">
+                <label for="inputAddress" class="form-label">Direccion</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Calle 221 #52 - 02">
+            </div>
+            <div class="col-6">
+                <label for="inputAddress2" class="form-label">Email</label>
+                <input type="text" class="form-control" id="inputAddress2">
+            </div>
+            <div class="col-md-3">
+                <label for="inputCity" class="form-label">Celular</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        enviame correos informativos
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-2 card">
+                <img src="../images/persona_admisiones.jpg" class="card-img-top" alt="eleccion">
+                <div class="card-body">
+                    <h3 class="card-title">Danielle Lockheart</h3>
+                    <p class="card-text">Coordinadora de programa de admisiones.</p>
+                </div>
+            </div>
+            <div class="col-sm-10 card">
+                <div class="card-body">
+                    <h3 class="card-title">Requisitos para aplicar</h3>
+                    <p class="card-text">Para aplicar a estos grados iniciales, no se requiere valoración previa de inglés. Los pasos a seguir son los siguientes:</p>
+                    <ol>
+                        <li>Hacer la inscripción cancelando el valor no reembolsable de $200.000 (consignación virtual mediante enlace que envía la oficina de admisiones)</li>
+                        <li>Diligenciar el formulario en línea subiendo los documentos requeridos* (tanto el enlace como los formularios llegarán a su correo una vez recibamos la inscripción)</li>
+                        <li>Programar visita del estudiante y sus padres al colegio</li>
+                        <li>Programar entrevista para los padres (presencial)</li>
+                    </ol>
+                    <p class="card-text">
+                        <ul>
+                            <li>admisiones@lc.com</li>
+                            <li>+57 317 5140906</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Informacion de precios -->
+     <div class="container">
+        <h1 class="text-center">Costos de Pension:</h1>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Categoria</th>
+                <th scope="col">B1 (20 SMLV)</th>
+                <th scope="col">B2 (10-20 SMLV)</th>
+                <th scope="col">B3 (8-14 SMLV)</th>
+                <th scope="col">B4 (-8 SMLV)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Costo Anual</th>
+                <td>$33’377.800</td>
+                <td>$30’488.600</td>
+                <td>$28’400.000</td>
+                <td>$26’200.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Enrolamiento / Vinculacion</th>
+                <td>$3’337.800</td>
+                <td>$3’048.600</td>
+                <td>$2’840.000</td>
+                <td>$2’620.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Costo Mensual</th>
+                <td>$3’004.000</td>
+                <td>$3’004.000</td>
+                <td>$2’744.000</td>
+                <td>$2’358.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Costo con descuento</th>
+                <td>$2’703.600</td>
+                <td>$2’469.600</td>
+                <td>$2’300.400</td>
+                <td>$2’122.200</td>
+              </tr>
+            </tbody>
+          </table>
+     </div>
+    <!-- Footer section -->
+    <footer class="footer text-white pt-5 pb-4">
+        <div class="container-fluid">
+            <div class="row text-center text-sm-left">
+                <div class="col">
+                    <h5 class="sm-4 font-weight-bold text-warning">Learning Center</h5>
+                    <p> En LC, brindamos un entorno de apoyo que fomenta el aprendizaje, el crecimiento y la excelencia
+                        académica, formando a los líderes del mañana.</p>
+                </div>
+                <div class="col">
+                    <h5 class="sm-4 font-weight-bold text-warning"></h5>
+                </div>
+                <div class="col">
+                    <h5 class="sm-4 font-weight-bold text-warning">Links</h5>
+                    <p><a class="text-white" style="text-decoration: none;" href="#">WhatsApp</a></p>
+                    <p><a class="text-white" style="text-decoration: none;" href="#">Facebook</a></p>
+                    <p><a class="text-white" style="text-decoration: none;" href="#">Instagram</a></p>
+                </div>
+                <div class="col">
+                    <h5 class="sm-4 font-weight-bold text-warning">Contacto</h5>
+                    <p><i class="bi bi-envelope"></i> learning.center@lc.com</p>
+                    <p><i class="bi bi-whatsapp"></i> +57 314 259 3024</p>
+                    <p><i class="bi bi-map"></i> Calle 221 #52 - 02</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootsrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>

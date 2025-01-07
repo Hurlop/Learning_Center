@@ -1,0 +1,68 @@
+.carousel-inner{
+    background-size: cover;
+}
+.navbar{
+    background-color: rgb(86, 77, 54);
+    height: 80px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+}
+.navbar-brand{
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    transition: 0.3s color;
+}
+.login-button{
+    background-color: orange;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+.login-button:hover{
+    background-color: #00b383;
+}
+.navbar-toggler{
+    border: none;
+    background-color: whitesmoke;
+    font-size: 1.25rem;
+}
+.navbar-toggler:focus, .btn-close:focus{
+    box-shadow: none;
+    outline: none;
+}
+.nav-link{
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    position: relative;
+}
+.nav-link:hover{
+    color: #00b383;
+}
+.footer{
+    background-color: rgb(86, 77, 54);
+}
+.carousel, .carousel-item{
+    height: 500px;
+}
+.offcanvas-body{
+    background-color: rgb(86, 77, 54);
+}
+.admisiones_img{
+    height: 500px;
+}
+.icono{
+    height: 100px; 
+}
+.imagen_admisiones{
+    height: 400px;
+    overflow: hidden;
+}
+.admisionesimg{
+    width: 100%;
+    clip-path: rect(0, 100px, 200px, 0);
+}
