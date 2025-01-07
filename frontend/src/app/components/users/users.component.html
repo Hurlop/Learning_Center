@@ -1,0 +1,34 @@
+<div class="layout">
+    <app-menu-dashboard></app-menu-dashboard>
+    <div class="areadetrabajo scrollable-component">
+        <h4>Usuarios:</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of data">
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.cellphone}}</td>
+                        <td>{{item.rol}}</td>
+                        <td>
+                            <div *ngIf="item.state == 1">Activo</div>
+                            <div *ngIf="item.state == 2">Inactivo</div>
+                        </td>
+                    </tr>
+                </ng-container>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

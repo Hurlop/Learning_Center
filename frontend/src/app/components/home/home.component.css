@@ -1,0 +1,17 @@
+.carousel-inner{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+.carousel-image{
+    width: auto; /* Maintain original aspect ratio */
+    height: 100%; /* Scale the height to 400px */
+    object-fit: contain; 
+}
+.layout{
+    background-image: url('../../../../public/assets/db_background.jpg');
+    background-size: cover;
+}

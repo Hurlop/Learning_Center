@@ -1,0 +1,17 @@
+.icono{
+    height: 100px; 
+}
+.imagen_admisiones{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+.admisionesimg{
+    width: 100%; /* Maintain original aspect ratio */
+}
+.admisions-director{
+    height: 500px;
+}

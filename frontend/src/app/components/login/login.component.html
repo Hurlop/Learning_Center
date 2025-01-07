@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="bg-image">
+    <!-- <section class="imagen_admisiones">
+        <img src="assets/mision_vision.jpg" class="admisionesimg" alt="admisiones_1">
+    </section> -->
+    <div class="container">
+        <h2>Iniciar Sesion</h2>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electronico</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="email">
+        </div>
+        <div class="mb-3">
+            <label for="pass1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="pass1" [(ngModel)]="pass1">
+        </div>
+        <div>
+            <p>¿No tienes cuenta? <a routerLink="/register">Registrate</a></p>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="login()">Ingresar</button>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,91 @@
+<div class="layout">
+    <app-menu-dashboard></app-menu-dashboard>
+    <div class="areadetrabajo scrollable-component">
+        <div class="container">
+            <h1>Eventos Academicos:</h1>
+            <h2>En esta pagina podras modificar los eventos que hay para el personal academico</h2>
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newEventModal">Nuevo Evento</a>
+            <ng-container *ngFor="let item of data">
+                <div class="row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">{{item.eventTitle}}</h5>
+                          <h6 class="card-subtitle mb-2 text-body-secondary">Lugar: {{item.place}}</h6>
+                          <p class="card-text">{{item.description}}</p>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{item.date}}</li>
+                          </ul>
+                          <a class="btn btn-warning" (click)="editEventMod(item._id)">Modificar Evento</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="modal fade" id="newEventModal" tabindex="-1" aria-labelledby="newEventModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="newEventModalLabel">Registro de Evento</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <div class="mb-3">
+                                    <label for="eventTitle" class="col-form-label">Nombre del Evento:</label>
+                                    <input type="text" class="form-control" id="eventTitle" [(ngModel)]="eventTitle">
+                                </div>
+                                <label for="message-text" class="col-form-label">Descripción:</label>
+                                <textarea class="form-control" id="message-text" [(ngModel)]="description"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="col-form-label">Fecha:</label>
+                                <input type="date" class="form-control" id="date" [(ngModel)]="date">
+                            </div>
+                            <div class="mb-3">
+                                <label for="place" class="col-form-label">Lugar:</label>
+                                <input type="text" class="form-control" id="place" [(ngModel)]="place">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-success" (click)="saveData()" data-bs-dismiss="modal">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modEvent" tabindex="-1" aria-labelledby="modEventLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modEventLabel">Modificar Evento</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <div class="mb-3">
+                                    <label for="eventTitle" class="col-form-label">Nombre del Evento:</label>
+                                    <input type="text" class="form-control" id="eventTitle" [(ngModel)]="eventTitleMod">
+                                </div>
+                                <label for="message-text" class="col-form-label">Descripción:</label>
+                                <textarea class="form-control" id="message-text" [(ngModel)]="descriptionMod"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="col-form-label">Fecha:</label>
+                                <input type="date" class="form-control" id="date" [(ngModel)]="dateMod">
+                            </div>
+                            <div class="mb-3">
+                                <label for="place" class="col-form-label">Lugar:</label>
+                                <input type="text" class="form-control" id="place" [(ngModel)]="placeMod">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" (click)="deleteInfoModal()"  data-bs-dismiss="modal">Eliminar</button>
+                            <button type="button" class="btn btn-success" (click)="updateInfoModal()" data-bs-dismiss="modal">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

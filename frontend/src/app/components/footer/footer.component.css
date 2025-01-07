@@ -1,0 +1,29 @@
+.footer{
+    background-color: white;
+    border-top: 3px solid rgb(236,61,58);
+    color: black !important;
+    height: max-content;
+}
+h4{
+    color: orange;
+}
+p{
+    margin: 0;
+}
+.col-4{
+    padding: 20px 10px 10px 10px;
+}
+li{
+    list-style: none;
+}
+.button{
+    margin-top: 24px;
+    padding: 0 25px 0 25px;
+}
+img{
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px -5px black;
+}
+.contacto{
+    padding-left: 35px;
+}

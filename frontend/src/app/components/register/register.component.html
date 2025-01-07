@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="bg-image">
+    <!-- <section class="imagen_admisiones">
+        <img src="assets/mision_vision.jpg" class="admisionesimg" alt="admisiones_1">
+    </section> -->
+    <div class="container">
+        <h2>Formulario de Registro</h2>
+        <div class="sm-3">
+            <label for="email" class="form-label">Correo Electronico</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="email">
+        </div>
+        <div class="sm-3">
+            <label for="name" class="form-label">Nombre completo</label>
+            <input type="email" class="form-control" id="name" [(ngModel)]="name">
+        </div>
+        <div class="sm-3">
+            <label for="cellphone" class="form-label">Telefono</label>
+            <input type="email" class="form-control" id="cellphone" [(ngModel)]="cellphone">
+        </div>
+        <div class="sm-3">
+            <label for="pass1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="pass1" [(ngModel)]="pass1">
+        </div>
+        <!-- <div class="sm-3">
+            <label for="pass2" class="form-label">Confrima tu contraseña</label>
+            <input type="password" class="form-control" id="pass2" [(ngModel)]="pass2">
+        </div> -->
+        <div class="sm-3 registro">
+            <button type="submit" class="btn btn-primary" (click)="register()">Registrar</button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

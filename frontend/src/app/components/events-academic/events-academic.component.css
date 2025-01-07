@@ -1,0 +1,12 @@
+.layout {
+    display: flex; /* To arrange components side-by-side */
+    height: 100vh; /* Full height of the viewport */
+  }
+.aside {
+    position: fixed; /* Keeps this component in a fixed position */
+    height: 100%; /* Full height of the viewport */
+}
+.scrollable-component {
+    overflow-y: auto; /* Enable scrolling for this component */
+    height: 100vh; /* Full height of the viewport */
+}

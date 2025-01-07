@@ -1,0 +1,182 @@
+<div class="wrapper">
+    <aside id="sidebar">
+        <div class="d-flex">
+            <button id="toggle-btn" type="button">
+                <img src="assets/logo.png" class="logo">
+            </button>
+            <div class="sidebar-logo">
+                <a routerLink="">Learning Center</a>
+            </div>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item">
+                <a routerLink="/dashboard" class="sidebar-link">
+                    <i class="bi bi-journal-bookmark"></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a routerLink="/users" class="sidebar-link">
+                    <i class="bi bi-journal-bookmark"></i>
+                    <span>Usuarios</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                    <i class="bi bi-shield-fill"></i>
+                    <span>Operaciones</span>
+                </a>
+                <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" (click)="newOpenModal()">Nuevo Usuario</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" (click)="modOpenModal()">Modificar Usuarios</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
+                    <i class="bi bi-columns"></i>
+                    <span>Eventos</span>
+                </a>
+                <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
+                            Tipos de Eventos
+                        </a>
+                        <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+                            <li class="sidebar-item">
+                                <a routerLink="/events" class="sidebar-link">Eventos Staff</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a routerLink="/eventsAcademic" class="sidebar-link">Eventos Estudiantes</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <i class="bi bi-bell"></i>
+                    <span>Notificaciones</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <i class="bi bi-gear"></i>
+                    <span>Configuracion</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#" class="sidebar-link">
+                <i class="bi bi-box-arrow-left"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+    <div class="modal fade" id="newUserModal" tabindex="-1" aria-labelledby="newUserModalLabel">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="newUserModalLabel">Registro de Usuario</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Correo Electronico:</label>
+                            <input type="email" class="form-control" id="email" [(ngModel)]="email">
+                        </div>
+                        <label for="name" class="col-form-label">Nombre compelto:</label>
+                        <input type="text" class="form-control" id="name" [(ngModel)]="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cellphone" class="col-form-label">Telefono:</label>
+                        <input type="number" class="form-control" id="cellphone" [(ngModel)]="cellphone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="col-form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="password" [(ngModel)]="password">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" (click)="saveData()"
+                        data-bs-dismiss="modal">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modifyUser" tabindex="-1" aria-labelledby="modifyUserLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modifyUserLabel">Modificar info:</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Para modificar los datos de un usuario, ingresa su correo electronico:</p>
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Correo Electronico:</label>
+                            <input type="email" class="form-control" id="email" [(ngModel)]="emailMod">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="searchEmail()">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="formDeleteUser" tabindex="-1" aria-labelledby="formDeleteUserLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="formDeleteUserLabel">Modificar usuario:</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <fieldset disabled>
+                                <label for="email" class="col-form-label">Correo Electronico (No Editable):</label>
+                                <input type="email" class="form-control" id="email" [(ngModel)]="email">
+                            </fieldset>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Nombre completo:</label>
+                            <input type="text" class="form-control" id="name" [(ngModel)]="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cellphone" class="col-form-label">Telefono:</label>
+                            <input type="number" class="form-control" id="cellphone" [(ngModel)]="cellphone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="rol" class="col-form-label">Rol:</label>
+                            <select class="form-select" id="rol" [(ngModel)]="rol">
+                                <option value="admin">admin</option>
+                                <option value="trabajador">trabajador</option>
+                                <option value="cliente">cliente</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="state" class="col-form-label">Estado:</label>
+                            <select class="form-select" id="state" [(ngModel)]="state">
+                                <option value="1">Activo</option>
+                                <option value="2">Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" (click)="deleteInfoModal()">Eliminar Usuario</button>
+                    <button type="button" class="btn btn-success" (click)="updateInfoModal()">Actualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

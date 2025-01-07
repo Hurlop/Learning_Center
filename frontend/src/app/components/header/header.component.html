@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand me-auto" routerLink="">
+            <img src="assets/logo.png" class="logo" alt="">  Learning Center</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Learning Center</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" >
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" aria-current="page" routerLink="">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" routerLink="/mision">Mision & Vision</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" routerLink="/admisions">Admisiones & Costos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <a routerLink="/login" class="login-button mx-3">Iniciar Sesion</a>
+        <button class="navbar-toggler" type="button" (click)="openModal()" data-bs-target="#offcanvasNavbar"aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    </div>
+</nav>

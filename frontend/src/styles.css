@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: "Exo 2", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.areadetrabajo{
+    float: right;
+    width: calc(100% - 260px);
+    background-image: url('../public/assets/db_background.jpg'); /* Path to your image */
+    background-repeat: repeat; /* Repeat the image horizontally and vertically */
+    background-size: cover;
+}
