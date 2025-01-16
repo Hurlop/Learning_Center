@@ -29,7 +29,7 @@ app.post('/RegistrarModal', function(request, reponse){
 app.get('/mostrarRegistros',function (request,response){
     usersRegisterController.Mostrar(request,response)
 })
-app.post('/mostrarRegistrosEmail',function (request,response){
+app.get('/mostrarRegistrosEmail',function (request,response){
     usersRegisterController.MostrarRegistrosEmail(request,response)
 })
 app.put('/actualizarRegistro',function (request,response){

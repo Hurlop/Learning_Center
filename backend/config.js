@@ -3,6 +3,7 @@ var config = {
 }
 config.puerto = 3000
 config.db = 'learningCenterDB'
+config.db_Test = 'learningCenterDB_Test'
 config.lock = 'dsaifh89f23jh89fqhfioaewjfq¨[*_¡?=)(#!"#'
 config.urlReal = "http://localhost:4200"
 

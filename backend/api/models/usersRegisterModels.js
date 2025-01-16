@@ -28,7 +28,6 @@ usersRegisterModel.validarId = function(post, callback){
 
 usersRegisterModel.validarEmail = function(post, callback){
     MyModel.findOne({email:post.email}).then((res) => {
-        console.log(res)
         if(res == null){
             return callback({existe:'No existe'})
         }else{
@@ -45,11 +44,10 @@ usersRegisterModel.Registrar = function(post, callback){
     instance.cellphone = post.cellphone
     instance.password = post.password
     instance.rol = "cliente"
-    instance.state = 0
+    instance.state = 2
     instance.code = post.activationCode
 
     instance.save().then((res) => {
-        console.log(res)
         return callback({state:true})
     }).catch((error) => {
         console.log(error)
@@ -68,7 +66,6 @@ usersRegisterModel.RegistrarModal = function(post, callback){
     instance.state = 1
 
     instance.save().then((res) => {
-        console.log(res)
         return callback({state:true})
     }).catch((error) => {
         console.log(error)
@@ -77,18 +74,14 @@ usersRegisterModel.RegistrarModal = function(post, callback){
 }
 
 usersRegisterModel.Mostrar = function (post, callback){
-    MyModel.find({},{email:1, name:1, cellphone:1, rol:1, state:1}).then((res) =>{
+    MyModel.find({},{_id:0, email:1, name:1, cellphone:1, rol:1, state:1}).then((res) =>{
         return  callback({data:res})
     })
 }
 
 usersRegisterModel.MostrarRegistrosEmail = function (post, callback){
-    MyModel.findOne({email:post.email},{email:1, name:1, cellphone:1, rol:1, state:1}).then((res) =>{
-        if (res === undefined || res === null || res === "") {
-            return callback({state:false,mensaje:"No se contró un usuario con ese email"})
-        } else {
-            return  callback({state:true,data:res})
-        }
+    MyModel.findOne({email:post.email},{_id:0, email:1, name:1, cellphone:1, rol:1, state:1}).then((res) =>{
+        return  callback({state:true,data:res})
     })
 }
 
@@ -123,8 +116,10 @@ usersRegisterModel.Login = function (post , callback){
         if (res == null){
             return callback({state:false,mensaje:'credenciales invalidas, intenta nuevamente'})
         }
-        else {
-            return callback({state:true,mensaje:'Bienvenido ' + res.name})
+        if(res.state == 2){
+            return callback({state:false, mensaje:'Por favor activar la cuenta'})
+        } else {
+            return callback({state:true,res})
         }
     })
 }
@@ -175,4 +170,5 @@ usersRegisterModel.checkDate = function (post, callback){
         }
     })
 }
+usersRegisterModel.MyModel = MyModel
 module.exports.usersRegisterModelExport = usersRegisterModel

@@ -35,7 +35,7 @@ usersRegisterController.Registrar = function(request, response){
         if(res.existe == 'Si existe'){
             response.json({state:false,mensaje:"Este email ya existe."})
         }
-        else{
+        if(res.existe == 'No existe'){
             var activationCode = Math.ceil(Math.random() * (999999 + 100000) + 100000)
             post.activationCode = activationCode
             usersRegisterModel.Registrar(post, function(res){
@@ -251,9 +251,9 @@ usersRegisterController.Registrar = function(request, response){
                         console.log(error)
                         return false
                     }
-                    console.log(info)
                 })
-            }else{
+            }
+            if(res.state == false){
                 response.json({state:false,mensaje:"Hubo un error al registrar."})
             }
             })
@@ -304,7 +304,6 @@ usersRegisterController.RegistrarModal = function(request, response){
     })
     
 }
-
 usersRegisterController.Mostrar = function(request, response){
     usersRegisterModel.Mostrar(null,function(res){
         response.json({state:true, datos:res.data})
@@ -315,21 +314,21 @@ usersRegisterController.MostrarRegistrosEmail = function(request, response){
         email:request.body.emailMod
     }
     if(post.email == undefined || post.email == "" || post.email == null){
-        response.json({state:false,mensaje:"El email es obligatorio" + post.email})
+        response.json({state:false,mensaje:"El email es obligatorio"})
         return false
     }
-    usersRegisterModel.MostrarRegistrosEmail(post,function(res){
-        if(res.state == false){
-            response.json({state:false, mensaje:"No hay usuarios con el email registrado"})
+        usersRegisterModel.validarEmail(post, function(res){
+        if(res.existe == 'Si existe'){
+            usersRegisterModel.MostrarRegistrosEmail(post,function(res){
+                response.json({state:true,datos:res.data})
+            })
+        }
+        if(res.existe == 'No existe'){
+            response.json({state:false,mensaje:'El email ingresado no existe'})
             return false
         }
-        if(res.state == true){
-            response.json({state:true, datos:res.data})
-        }
-        
     })
 }
-
 usersRegisterController.Actualizar = function(request, response){
     var post = {
         email:request.body.email,
@@ -373,7 +372,6 @@ usersRegisterController.Actualizar = function(request, response){
         }
     })
 }
-
 usersRegisterController.Eliminar = function(request,response){
     var post = {
         email:request.body.email
@@ -395,7 +393,6 @@ usersRegisterController.Eliminar = function(request,response){
     })
     
 }
-
 usersRegisterController.Login = function (request, response){
     var post = {
         email:request.body.email,
@@ -414,18 +411,12 @@ usersRegisterController.Login = function (request, response){
             return false
         }
         if(res.existe == "Si existe"){
-            usersRegisterModel.Login(post, function(res){
-                if(res.state === 0){
-                    response.json({state:false, mensaje:'Por favor activar la cuenta'})
-                    return false
-                } else{
-                    response.json(res)
-                }
+            usersRegisterModel.Login(post, function(res){ 
+                 response.json(res)
             })
         }
     })
 }
-
 usersRegisterController.Activar = function (request, response){
     var post = {
         email:request.body.email,
@@ -444,7 +435,6 @@ usersRegisterController.Activar = function (request, response){
         response.json(res)
     })
 }
-
 usersRegisterController.ForgotPassword = function (request, response){
     post = {
         email:request.body.email
@@ -676,7 +666,6 @@ usersRegisterController.ForgotPassword = function (request, response){
         
     })
 }
-
 usersRegisterController.ActivateCodeFP = function (request, response){
     function timeLapsed(olddate){
         const oldDate = new Date(olddate)
