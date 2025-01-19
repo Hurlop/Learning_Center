@@ -279,8 +279,8 @@ describe("GET /mostrarRegistros", () => {
                         state:true
                     })
                 )
+            done()
             },60)
-        done()
     })
     afterAll((done) => {
         usersRegisterModel.MyModel.findOneAndDelete({email:"test@test.com"}).then((res) => {
@@ -329,8 +329,8 @@ describe("GET /mostrarRegistrosEmail", () => {
         usersRegisterController.MostrarRegistrosEmail(request,response)
         setTimeout(() => {
             expect(response.json).toHaveBeenCalledWith({state:false,mensaje:'El email ingresado no existe'})
+            done()
         },60);
-        done()
     })
     test("Mostrará el registros por email", (done) => {
         request.body = {
@@ -348,8 +348,8 @@ describe("GET /mostrarRegistrosEmail", () => {
                     state: 1
                 }
             })
+            done()
         },60);
-        done()
     })
     afterAll((done) => {
         usersRegisterModel.MyModel.findOneAndDelete({email:"test@test.com"}).then((res) => {
