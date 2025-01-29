@@ -3,7 +3,7 @@ var usersRegisterController = require('./api/controllers/usersRegisterController
 var eventsAcademicController = require('./api/controllers/eventsAcademicController.js').eventsAcademicControllerExport
 
 app.get('/', function(request, response) {
-  res.send('hello world');
+  response.send('hello world');
 });
 
 app.post('/usuarios/Guardar', function(request,response){
