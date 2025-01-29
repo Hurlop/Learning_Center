@@ -2,6 +2,10 @@ var usersController = require('./api/controllers/usersController.js').usersContr
 var usersRegisterController = require('./api/controllers/usersRegisterController.js').usersRegisterControllerExport
 var eventsAcademicController = require('./api/controllers/eventsAcademicController.js').eventsAcademicControllerExport
 
+app.get('/', function(request, response) {
+  res.send('hello world');
+});
+
 app.post('/usuarios/Guardar', function(request,response){
     usersController.Guardar(request,response)
 })
